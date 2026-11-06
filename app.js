@@ -158,11 +158,41 @@ var TOUR_NAME = "Круиз Барселона — Киль, MSC Euribia, 14–2
   window.addEventListener('load', function () { DAYS.forEach(function (d) { var im = new Image(); im.src = 'img/port-' + d.id + '.jpg'; }); });
 
 
-  /* обратный отсчёт до отплытия */
-  var cd = document.getElementById('countdown');
-  if (cd) {
-    var left = Math.ceil((new Date('2027-04-14T18:00:00+02:00') - new Date()) / 86400000);
-    if (left > 0) { var n = left % 100, k = left % 10; cd.textContent = 'до отплытия ' + left + (n > 10 && n < 15 ? ' дней' : k === 1 ? ' день' : k > 1 && k < 5 ? ' дня' : ' дней'); }
+  /* таймер до отплытия */
+  var cnt = document.querySelectorAll('#count b');
+  if (cnt.length) {
+    var target = new Date('2027-04-14T18:00:00+02:00').getTime();
+    var tick = function () {
+      var sec = Math.max(0, Math.floor((target - Date.now()) / 1000));
+      var v = [Math.floor(sec / 86400), Math.floor(sec % 86400 / 3600), Math.floor(sec % 3600 / 60), sec % 60];
+      v.forEach(function (x, i) { cnt[i].textContent = i ? String(x).padStart(2, '0') : x; });
+    };
+    tick(); setInterval(tick, 1000);
+  }
+
+  /* «Знали ли вы?» */
+  var factEl = document.getElementById('fact');
+  if (factEl) {
+    var facts = DAYS.filter(function (d) { return !d.sea; }).map(function (d) { return d.name + ': ' + d.fact; });
+    var fi = Math.floor(Math.random() * facts.length);
+    var showFact = function () { factEl.textContent = facts[fi]; fi = (fi + 1) % facts.length; };
+    showFact();
+    document.getElementById('nextFact').addEventListener('click', showFact);
+  }
+
+  /* кино: ролики подгружаются и играют, только когда видны */
+  var clips = document.querySelectorAll('.clip video, .reel video');
+  if (!still && 'IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (!v.src) { v.src = v.dataset.src; v.addEventListener('playing', function () { v.classList.add('on'); }, { once: true }); }
+          var q = v.play(); if (q && q.catch) q.catch(function () {});
+        } else v.pause();
+      });
+    }, { threshold: .25 });
+    clips.forEach(function (v) { cio.observe(v); });
   }
 
   /* карусель отзывов */

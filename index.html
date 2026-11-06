@@ -13,9 +13,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=8">
 <link rel="stylesheet" href="rich.css?v=5">
-<link rel="stylesheet" href="brand.css?v=6">
+<link rel="stylesheet" href="brand.css?v=9">
 </head>
 <body>
 <a class="skip" href="#main">К содержимому</a>
@@ -54,7 +55,7 @@
       <p class="trust"><b>5,0 ★</b> на Яндекс Картах · 75 оценок и 70 отзывов</p>
     </div>
     <aside class="book-card" aria-label="Стоимость">
-      <p class="bc-dates">14–24 апреля 2027 · 11 дней · <b id="countdown"></b></p>
+      <p class="bc-dates">14–24 апреля 2027 · 11 дней</p>
       <p class="bc-price"><span>от</span> <b>1 590 €</b></p>
       <p class="bc-note">на человека, вдвоём во внутренней каюте</p>
       <ul class="bc-list">
@@ -69,6 +70,21 @@
     </aside>
   </div>
   <p class="vhero-cap">Видео нашей туристки: закат с палубы лайнера MSC</p>
+</section>
+
+<section class="sec" id="schet" aria-label="До отплытия">
+  <div class="wrap widgets">
+    <div class="widget">
+      <h3>До отплытия из Барселоны</h3>
+      <div class="count" id="count" role="timer"><div><b>–</b><span>дней</span></div><div><b>–</b><span>часов</span></div><div><b>–</b><span>минут</span></div><div><b>–</b><span>секунд</span></div></div>
+      <p class="note">Отплытие 14 апреля 2027 в 18:00 по местному времени.</p>
+    </div>
+    <div class="widget didyou">
+      <p class="dy-label">Знали ли вы?</p>
+      <div class="q" id="fact" aria-live="polite"></div>
+      <button class="btn btn-ghost btn-sm" id="nextFact" type="button">Ещё факт</button>
+    </div>
+  </div>
 </section>
 
 <section class="sec" id="vklyucheno" aria-labelledby="incl-h">
@@ -187,17 +203,48 @@
 
 <section class="sec" id="den" aria-labelledby="day-h">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 id="day-h">Один день круиза</h2>
-      <p class="lead">Так проходит обычный день, когда лайнер стоит в порту.</p>
+    <div class="sec-head row-head">
+      <h2 id="day-h">Как проходит день в порту</h2>
+      <p class="lead">Примерно так: точное время зависит от порта.</p>
     </div>
-    <ol class="dayline">
-      <li><figure><img src="people/lunch.jpg" alt="Завтрак на палубе с видом на море" loading="lazy" width="619" height="1100"></figure><time>08:00</time><b>Завтрак с видом на море</b><span>Шведский стол на верхней палубе.</span></li>
-      <li><figure><img src="people/port-view.jpg" alt="Вид с палубы на порт" loading="lazy" width="506" height="900"></figure><time>09:00</time><b>Порт</b><span>Сходите на берег: от 7 до 10 часов на город.</span></li>
-      <li><figure><video src="people/sunset.mp4" poster="people/sunset.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video></figure><time>18:00</time><b>Отплытие и закат</b><span>Лайнер уходит, вы — на палубе.</span></li>
-      <li><figure><img src="people/dish.jpg" alt="Ужин в ресторане лайнера" loading="lazy" width="619" height="1100"></figure><time>20:00</time><b>Ужин</b><span>Ресторан входит в цену.</span></li>
-      <li><figure><video src="people/showv.mp4" poster="people/showv.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video></figure><time>22:00</time><b>Шоу</b><span>Театр, бары, дискотека.</span></li>
+    <ol class="hours">
+      <li><span class="hr">08:00</span><figure><img src="people/lunch.jpg" alt="Завтрак на палубе с видом на море" loading="lazy" width="619" height="1100"></figure><b>Утро в порту</b><span>Лайнер уже у причала. Завтрак на борту — и вперёд.</span></li>
+      <li><span class="hr">09:00</span><figure><img src="people/port-view.jpg" alt="Вид с палубы на порт" loading="lazy" width="506" height="900"></figure><b>В городе</b><span>Главные места и обед там, где едят местные.</span></li>
+      <li><span class="hr">16:00</span><figure><img src="people/cards.jpg" alt="Круизные карты на фоне лайнера" loading="lazy" width="619" height="1100"></figure><b>Назад на борт</b><span>Возвращаемся за полчаса–час до отплытия.</span></li>
+      <li><span class="hr">19:00</span><figure><img src="people/dish.jpg" alt="Ужин в ресторане лайнера" loading="lazy" width="506" height="900"></figure><b>Ужин</b><span>Ресторан по вкусу и закат с палубы.</span></li>
+      <li><span class="hr">21:00</span><figure><video src="people/showv.mp4" poster="people/showv.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video></figure><b>Вечер</b><span>Шоу, бары, бассейны. Лайнер идёт дальше.</span></li>
     </ol>
+  </div>
+</section>
+
+<section class="sec dark" id="kino" aria-labelledby="cine-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="cine-h">А вечером вы вернётесь сюда</h2>
+      <p class="lead">Закат на палубе, тост с новыми друзьями, шоу и ужин. После дня в порту это лучшая часть круиза.</p>
+    </div>
+    <div class="cine"><figure class="clip big"><img src="promo/aerial.jpg" alt="" loading="lazy"><video data-src="promo/aerial.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Лайнер на закате</figcaption></figure><figure class="clip"><img src="promo/toast.jpg" alt="" loading="lazy"><video data-src="promo/toast.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Тост на палубе</figcaption></figure><figure class="clip"><img src="promo/dance.jpg" alt="" loading="lazy"><video data-src="promo/dance.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Вечернее шоу</figcaption></figure><figure class="clip"><img src="promo/wine.jpg" alt="" loading="lazy"><video data-src="promo/wine.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Дегустация вина</figcaption></figure><figure class="clip"><img src="promo/slides.jpg" alt="" loading="lazy"><video data-src="promo/slides.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Аквапарк с высоты</figcaption></figure><figure class="clip"><img src="promo/chef.jpg" alt="" loading="lazy"><video data-src="promo/chef.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Повара у вас на глазах</figcaption></figure></div>
+    <div class="reels4"><figure class="reel"><img src="promo/v-dance.jpg" alt="" loading="lazy"><video data-src="promo/v-dance.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Закат вдоль борта</figcaption></figure><figure class="reel"><img src="promo/v-jacuzzi.jpg" alt="" loading="lazy"><video data-src="promo/v-jacuzzi.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Джакузи на закате</figcaption></figure><figure class="reel"><img src="promo/v-chef.jpg" alt="" loading="lazy"><video data-src="promo/v-chef.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Ужин у стойки</figcaption></figure><figure class="reel"><img src="promo/v-slide.jpg" alt="" loading="lazy"><video data-src="promo/v-slide.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Крутой спуск</figcaption></figure></div>
+    <p class="credit">Видео MSC Cruises; часть роликов снята на других лайнерах компании.</p>
+  </div>
+</section>
+
+<section class="sec" id="pasport" aria-labelledby="pass-h">
+  <div class="wrap pass-grid">
+    <div>
+      <h2 id="pass-h">Подарок каждому: гастро-паспорт</h2>
+      <p class="lead">Игровая книжка на 30 страниц от НеобхоДима. В каждом порту у вас одно главное блюдо, пара находок и маленькое задание на 10–15 минут.</p>
+      <ul class="pass-list">
+        <li>Пять пинчос за один день в Бильбао</li>
+        <li>Бинго «Скала» в Гибралтаре</li>
+        <li>Прогулка на 9 часов по Аликанте с картой</li>
+        <li>Открытка из Франции: напишите её за обедом в Ла-Рошели</li>
+      </ul>
+      <a class="btn btn-gold" href="#zayavka">Хочу в этот круиз</a>
+    </div>
+    <div class="pass-pages" aria-hidden="true">
+      <img src="passport/passport-bingo.jpg" alt="" loading="lazy"><img src="passport/passport-cover.jpg" alt="" loading="lazy"><img src="passport/passport-pintxos.jpg" alt="" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -301,7 +348,7 @@
       <button class="btn btn-light-dark btn-sm" type="button" id="packReset">Начать заново</button>
     </div>
     <div class="notebook" role="group" aria-label="Список вещей">
-      <span class="clip" aria-hidden="true"></span>
+      <span class="paperclip" aria-hidden="true"></span>
       <p class="nb-title">Чемодан в круиз</p>
       <p class="nb-date">14–24 апреля 2027</p>
       <ul class="packlist" id="packlist"><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Загранпаспорт — минимум 3 месяца после поездки</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Шенгенская виза Испании (многократная)</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Медицинская страховка и страховка от невыезда</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Билеты на самолёт и подтверждение отелей</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Банковская карта и немного евро наличными</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Ветровка и тёплая кофта — для севера и палубы</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Удобная обувь для прогулок по городам</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Купальник и лёгкая одежда для юга Испании</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Нарядная одежда на один-два вечера</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Таблетки от укачивания и личные лекарства</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Солнцезащитные очки и крем</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Зарядки и адаптер для розетки Е/F</span></label></li></ul>
@@ -315,16 +362,7 @@
 <section class="sec" id="voprosy" aria-labelledby="faq-h">
   <div class="wrap faq-wrap">
     <h2 id="faq-h">Вопросы перед первым круизом</h2>
-    <div class="faq">
-      <details><summary>Почему не купить круиз напрямую у MSC?</summary><p>MSC продаёт только каюту. У нас перелёты, два отеля, трансфер и круиз уже состыкованы, а с группой едет наш менеджер, который говорит по-русски.</p></details>
-      <details><summary>Будет ли качать?</summary><p>Лайнер длиной 331 метр со стабилизаторами. В Средиземном море в апреле обычно спокойно, в Бискайском заливе бывает волна — возьмите таблетки от укачивания.</p></details>
-      <details><summary>Я не говорю по-английски</summary><p>На борту говорят по-английски, русского сервиса нет. Для этого с группой и едет наш менеджер.</p></details>
-      <details><summary>Какая погода в апреле?</summary><p>На юге Испании около 18–22 °C, на севере — в Бильбао, Ла-Рошели и Киле — около 12–16 °C и ветер. Нужна ветровка.</p></details>
-      <details><summary>Как добраться из Минска до Варшавы?</summary><p>Дорога до Варшавы не входит в цену. Поможем организовать трансфер для группы за доплату.</p></details>
-      <details><summary>Нужны ли вечерние наряды?</summary><p>Днём свободная одежда. Один-два вечера праздничные: платье или рубашка с брюками. Смокинг не нужен.</p></details>
-      <details><summary>Как платить на борту?</summary><p>Всё записывается на карту гостя, её привязывают к банковской карте или к депозиту наличными.</p></details>
-      <details><summary>Можно каюту с окном или балконом?</summary><p>Да, за доплату. Менеджер посчитает по наличию кают.</p></details>
-    </div>
+    <div class="faq"><div class="faq-col"><details><summary>Почему не купить круиз напрямую у MSC?</summary><p>MSC продаёт только каюту. У нас перелёты, два отеля, трансфер и круиз уже состыкованы, а с группой едет наш менеджер, который говорит по-русски.</p></details><details><summary>Будет ли качать?</summary><p>Лайнер длиной 331 метр со стабилизаторами. В Средиземном море в апреле обычно спокойно, в Бискайском заливе бывает волна — возьмите таблетки от укачивания.</p></details><details><summary>Я не говорю по-английски</summary><p>На борту говорят по-английски, русского сервиса нет. Для этого с группой и едет наш менеджер.</p></details><details><summary>Какая погода в апреле?</summary><p>На юге Испании около 18–22 °C, на севере — в Бильбао, Ла-Рошели и Киле — около 12–16 °C и ветер. Нужна ветровка.</p></details></div><div class="faq-col"><details><summary>Как добраться из Минска до Варшавы?</summary><p>Дорога до Варшавы не входит в цену. Поможем организовать трансфер для группы за доплату.</p></details><details><summary>Нужны ли вечерние наряды?</summary><p>Днём свободная одежда. Один-два вечера праздничные: платье или рубашка с брюками. Смокинг не нужен.</p></details><details><summary>Как платить на борту?</summary><p>Всё записывается на карту гостя, её привязывают к банковской карте или к депозиту наличными.</p></details><details><summary>Можно каюту с окном или балконом?</summary><p>Да, за доплату. Менеджер посчитает по наличию кают.</p></details></div></div>
   </div>
 </section>
 
@@ -380,7 +418,7 @@
   <a class="mbar-main" href="#zayavka">Забронировать</a>
 </nav>
 
-<script src="app.js?v=10"></script>
+<script src="app.js?v=11"></script>
 <script src="extras.js?v=1"></script>
 </body>
 </html>
