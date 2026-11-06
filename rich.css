@@ -1,0 +1,191 @@
+/* Насыщенная версия (06.11): видео-первый экран, карточка брони, туристы, день на борту, отзывы, ритм цветных секций.
+   Подключается после style.css. Палитра та же: терракота — единственный акцент, плюс тёмный и песочный фоны. */
+
+.btn-light{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.7);backdrop-filter:blur(6px)}
+.btn-light:hover{background:#fff;color:var(--ink)}
+.sec-head{margin-bottom:28px}
+.sec-head .lead{margin-top:4px}
+
+/* шапка поверх видео: прозрачная, пока не прокрутили */
+.top:not(.solid){background:transparent;backdrop-filter:none}
+.top:not(.solid) .logo,.top:not(.solid) .nav a,.top:not(.solid) .top-phone{color:#fff}
+
+/* 1. первый экран */
+.vhero{position:relative;min-height:100vh;min-height:100svh;color:#fff;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:#2A2520}
+.vhero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vhero-shade{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(20,16,12,.55) 0,rgba(20,16,12,0) 22%),
+  linear-gradient(90deg,rgba(20,16,12,.72) 0,rgba(20,16,12,.35) 45%,rgba(20,16,12,0) 70%),
+  linear-gradient(0deg,rgba(20,16,12,.6) 0,rgba(20,16,12,0) 40%)}
+.vhero-in{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:110px var(--pad) 56px;display:grid;gap:28px;align-items:end}
+.vhero h1{color:#fff;font-size:clamp(34px,4.4vw,58px);line-height:1.14;max-width:15ch;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.vhero .kicker{color:rgba(255,255,255,.85)}
+.vhero .sub{color:rgba(255,255,255,.9);max-width:44ch}
+.vhero .trust{color:rgba(255,255,255,.85);padding-left:0;margin-top:20px}
+.vhero .trust:before{display:none}
+.vhero .trust b{color:#fff;margin-right:6px}
+.vhero-cap{position:absolute;z-index:2;right:16px;bottom:12px;font-size:12px;color:rgba(255,255,255,.7)}
+.book-card{background:var(--bg);color:var(--ink);border-radius:18px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.bc-dates{font-size:14px;color:var(--muted)}
+.bc-price{margin:6px 0 2px;display:flex;align-items:baseline;gap:8px}
+.bc-price span{color:var(--muted)}
+.bc-price b{font-family:var(--body);font-weight:600;font-size:42px;letter-spacing:-.02em;color:var(--accent);line-height:1}
+.bc-note{font-size:14px;color:var(--muted);margin-bottom:14px}
+.bc-list{list-style:none;margin:0 0 18px;border-top:1px solid var(--line)}
+.bc-list li{position:relative;padding:9px 0 9px 26px;border-bottom:1px solid var(--line);font-size:15px}
+.bc-list li:before{content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.bc-tg{display:block;text-align:center;margin-top:12px;font-size:15px;color:var(--ink)}
+@media (min-width:960px){
+  .vhero-in{grid-template-columns:minmax(0,1fr) 380px;gap:56px;padding-bottom:72px}
+}
+
+/* 2. наши туристы: тёмная секция с мозаикой */
+.dark{background:var(--dark);color:#fff}
+.dark h2{color:#fff}
+.dark .lead{color:rgba(255,255,255,.72)}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mosaic figure{position:relative;margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:#2A2520}
+.mosaic img,.mosaic video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));font-size:13.5px;line-height:1.35}
+@media (min-width:760px){
+  .mosaic{grid-template-columns:repeat(4,1fr);grid-auto-rows:220px}
+  .mosaic figure{aspect-ratio:auto}
+  .mosaic .m-tall{grid-row:span 2}
+}
+
+/* 4. маршрут: карта и фото одного размера, текст под ними */
+.rt{display:grid;gap:12px;margin-bottom:24px}
+.rt-map .map{height:100%;width:100%;object-fit:cover;aspect-ratio:4/5;border-radius:var(--r)}
+.rt-photo{aspect-ratio:4/5}
+@media (min-width:760px){.rt{grid-template-columns:1fr 1fr;gap:16px}.rt-map .map,.rt-photo{aspect-ratio:auto;height:560px}}
+@media (min-width:1100px){.rt{grid-template-columns:.8fr 1.2fr}}
+.day-card .day-body{display:grid;gap:4px 40px}
+@media (min-width:900px){.day-card .day-body{grid-template-columns:1fr 1fr}}
+.route .days button{background:var(--bg)}
+
+/* 5. один день круиза: лента карточек одинакового размера */
+.dayline{list-style:none;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin:0 calc(var(--pad) * -1);padding-left:var(--pad);padding-right:var(--pad)}
+.dayline li{scroll-snap-align:start}
+.dayline figure{position:relative;margin:0 0 12px;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;background:var(--bg2)}
+.dayline img,.dayline video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dayline time{display:block;font-size:14px;font-weight:600;color:var(--accent)}
+.dayline b{display:block;font-size:17px;margin:2px 0}
+.dayline span{font-size:14.5px;color:var(--muted)}
+@media (min-width:1100px){.dayline{margin:0;padding:0;overflow:visible}}
+
+/* 6. отзывы: секция в цвете акцента */
+.accent{background:var(--accent);color:#fff}
+.accent h2{color:#fff}
+.accent .lead{color:rgba(255,255,255,.85)}
+.rev-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.rating{display:grid;grid-template-columns:auto auto;align-items:center;gap:0 12px;color:#fff;text-decoration:none;background:rgba(0,0,0,.14);border-radius:var(--r);padding:14px 20px}
+.rating b{font-family:var(--body);font-weight:600;font-size:44px;line-height:1;grid-row:span 2}
+.rating span{font-size:18px;letter-spacing:2px;color:#FFD9A0}
+.rating small{font-size:14px;color:rgba(255,255,255,.85);text-decoration:underline}
+.reviews{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,1fr);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--pad) * -1);padding:0 var(--pad) 8px}
+.reviews figure{scroll-snap-align:start;margin:0;background:var(--bg);color:var(--ink);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.reviews blockquote{font-size:16px;line-height:1.55}
+.reviews figcaption{font-size:14px;color:var(--muted);font-weight:500}
+@media (min-width:1100px){.reviews{grid-auto-columns:minmax(0,1fr);margin:0;padding:0;overflow:visible}}
+
+/* 9. FAQ — две колонки */
+.faq{max-width:none}
+@media (min-width:900px){.faq{columns:2;column-gap:48px}.faq details{break-inside:avoid}}
+
+/* плавающая плашка брони на компьютере */
+.stick{position:fixed;z-index:55;right:24px;bottom:24px;display:none;align-items:center;gap:16px;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 12px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;pointer-events:none}
+.stick b{color:#FFD9A0;font-weight:600}
+.stick i{font-style:normal;background:var(--accent);border-radius:999px;padding:10px 18px;font-weight:600}
+.stick.on{opacity:1;transform:none;pointer-events:auto}
+@media (min-width:1000px){.stick{display:flex}}
+.route .days button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+@media (min-width:1100px){.dayline{grid-auto-columns:minmax(0,1fr)}}
+
+/* ===== v9: компактнее и конкретнее ===== */
+.row-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 32px}
+.row-head h2{margin:0}
+.row-head .lead{max-width:44ch}
+/* туристы: лента из 6 одинаковых небольших карточек */
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--pad) * -1);padding:0 var(--pad) 6px}
+.strip figure{scroll-snap-align:start;position:relative;margin:0;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#2A2520}
+.strip img,.strip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 10px 8px;background:linear-gradient(transparent,rgba(0,0,0,.7));font-size:13px}
+@media (min-width:1100px){.strip{grid-auto-columns:minmax(0,1fr);margin:0;padding:0;overflow:visible}}
+/* цена: две таблицы */
+.ptable{display:grid;gap:16px}
+.pcol{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:#fff}
+.pcol h3{font-family:var(--body);font-weight:600;font-size:17px;margin-bottom:10px}
+.pcol table{width:100%;border-collapse:collapse;font-size:15px}
+.pcol td{padding:9px 8px 9px 0;border-top:1px solid var(--line);vertical-align:top}
+.pcol td:first-child{color:var(--muted);white-space:nowrap;width:1%}
+.pin-yes td.ok{color:#1B7A46;font-weight:600;white-space:nowrap;text-align:right}
+.pin-yes td.ok:before{content:"✓ "}
+.pin-no{background:var(--bg2)}
+.pin-no td:first-child{color:var(--ink);white-space:normal;width:auto}
+.pin-no td:last-child{color:var(--muted);text-align:right}
+.pin-no .btn{margin-top:16px}
+@media (min-width:900px){.ptable{grid-template-columns:1.5fr 1fr}}
+/* фото маршрута меньше */
+@media (min-width:760px){.rt-map .map,.rt-photo{height:440px}}
+/* порты */
+.pgrid{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pgrid li{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.pgrid img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.pgrid div{padding:10px 12px 12px}
+.pgrid b{display:block;font-size:16px}
+.pgrid small{display:block;font-size:13px;color:var(--accent);margin:2px 0 4px}
+.pgrid span{font-size:13.5px;color:var(--muted);line-height:1.4;display:block}
+@media (min-width:900px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+/* лайнер: на борту */
+.onboard{list-style:none;display:grid;grid-template-columns:1fr;gap:0 32px;margin-top:28px;border-top:1px solid var(--line)}
+.onboard li{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr;gap:12px}
+.onboard b{font-size:15.5px}
+.onboard span{font-size:15px;color:var(--muted)}
+@media (min-width:900px){.onboard{grid-template-columns:1fr 1fr}}
+.gallery{grid-auto-rows:150px}
+/* о компании */
+.about{display:grid;gap:28px;align-items:center}
+.about-photo{width:100%;max-height:440px;object-fit:cover;border-radius:var(--r)}
+.about-facts{list-style:none;margin:20px 0;display:grid;gap:10px}
+.about-facts li{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:baseline;border-top:1px solid var(--line);padding-top:10px}
+.about-facts b{font-size:22px;font-weight:600;color:var(--accent)}
+.about-facts span{color:var(--muted);font-size:15px}
+.about-diplom{width:120px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+@media (min-width:900px){.about{grid-template-columns:.8fr 1.2fr;gap:56px}}
+/* отзывы: сетка 3 в ряд, текст обрезан, без пустот */
+.rv-grid{grid-auto-flow:row;grid-template-columns:1fr;overflow:visible;margin:0;padding:0;gap:12px}
+.rv-grid figure{padding:18px;gap:10px}
+.rv-grid blockquote{font-size:15px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+@media (min-width:760px){.rv-grid{grid-template-columns:repeat(3,1fr)}.rv-grid figure:nth-child(n+4){display:none}}
+@media (min-width:1100px){.rv-grid{grid-auto-columns:auto}}
+
+/* ===== v10 ===== */
+.about-text{margin-top:14px;color:var(--ink);max-width:60ch}
+/* сравнение */
+.cmp-t{width:100%;border-collapse:collapse;background:var(--bg);border-radius:var(--r);overflow:hidden;font-size:15.5px}
+.cmp-t th,.cmp-t td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cmp-t thead th{font-size:14px;color:var(--muted);font-weight:600;background:var(--bg2)}
+.cmp-t thead th:last-child{color:var(--accent)}
+.cmp-t tbody th{font-weight:600;white-space:nowrap}
+.cmp-t td{color:var(--muted)}
+.cmp-t td:last-child{color:var(--ink);font-weight:500}
+.cmp-note{margin-top:14px}
+@media (max-width:640px){.cmp-t thead{display:none}.cmp-t tr{display:grid;grid-template-columns:1fr 1fr}.cmp-t tbody th{grid-column:span 2;padding-bottom:4px;border:0}}
+/* лайнер: 9 фото */
+@media (min-width:760px){.gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:170px}}
+/* награды в визе */
+.awards{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:24px;align-self:start}
+.awards h3{font-family:var(--body);font-weight:600;font-size:18px;line-height:1.35}
+.awards p{font-size:14.5px;color:var(--muted);margin:8px 0 16px}
+.medals{display:flex;gap:12px;margin-bottom:16px}
+.medals img{width:96px;height:96px}
+.diploms{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.diploms figure{margin:0}
+.diploms img{width:100%;border-radius:6px;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+.diploms figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.aw-link{display:inline-block;margin-top:14px;font-size:14.5px}
+@media (min-width:900px){.visa{grid-template-columns:1.2fr .8fr}}
+.pin-yes td.ok:before{content:"✓";font-size:18px}
+.pin-no td.no{width:1%;padding-right:10px}
+.pin-no td.no:before{content:"✕";color:#C62828;font-weight:700;font-size:16px}
+.pin-no td:last-child{text-align:left;color:var(--ink)}
