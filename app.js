@@ -1,6 +1,13 @@
-// Адрес Google Apps Script для заявок. Пока пусто: форма предложит позвонить или написать.
-var LEAD_ENDPOINT = "";
+// Заявки идут в тот же Apps Script, что и у лендинга Стамбула (таблица «Заявки Стамбул» + письмо).
+// Отличить заявку по полю plan = TOUR_NAME.
+var LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbzxC8fGP3TF_uN9N0MuApY_V9eGdWj0ggqY6sOOIbX8ifHBO2ATvuoP7etg2LO2Hb2LBQ/exec";
 var TOUR_NAME = "Круиз Барселона — Киль, MSC Euribia, 14–24.04.2027";
+
+// «Цена до даты»: заполнить обе строки — и плашка появится у цены. Пустые — плашки нет.
+// После PRICE_UNTIL_ISO плашка скрывается сама.
+var PRICE_UNTIL_TEXT = "";        // например: "1 декабря"
+var PRICE_UNTIL_ISO = "";         // например: "2026-12-01T23:59:59+03:00"
+var PRICE_AFTER = "";             // например: "1 690 €"
 
 (function () {
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -158,6 +165,14 @@ var TOUR_NAME = "Круиз Барселона — Киль, MSC Euribia, 14–2
   window.addEventListener('load', function () { DAYS.forEach(function (d) { var im = new Image(); im.src = 'img/port-' + d.id + '.jpg'; }); });
 
 
+  /* цена до даты */
+  if (PRICE_UNTIL_TEXT && PRICE_AFTER && (!PRICE_UNTIL_ISO || Date.now() < new Date(PRICE_UNTIL_ISO).getTime())) {
+    document.querySelectorAll('.deadline').forEach(function (el) {
+      el.textContent = 'Цена 1 590 € — при брони до ' + PRICE_UNTIL_TEXT + ', потом ' + PRICE_AFTER;
+      el.hidden = false;
+    });
+  }
+
   /* таймер до отплытия */
   var cnt = document.querySelectorAll('#count b');
   if (cnt.length) {
@@ -229,6 +244,13 @@ var TOUR_NAME = "Круиз Барселона — Киль, MSC Euribia, 14–2
     upd();
   }
 
+  /* кнопки с data-want выбирают пункт «что вам нужно» в форме */
+  document.querySelectorAll('[data-want]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var r = document.querySelector('input[name="want"][value="' + a.dataset.want + '"]'); if (r) r.checked = true;
+    });
+  });
+
   /* форма */
   var form = document.getElementById('leadForm'), msg = document.getElementById('formMsg');
   var phoneLink = ' Позвоните: <a href="tel:+375447884422">+375 44 788-44-22</a> или напишите в <a href="https://t.me/+375447884422" target="_blank" rel="noopener">Telegram</a>.';
@@ -242,7 +264,8 @@ var TOUR_NAME = "Круиз Барселона — Киль, MSC Euribia, 14–2
     var data = new URLSearchParams();
     data.append('name', name); data.append('phone', phone); data.append('plan', TOUR_NAME);
     data.append('channel', (form.querySelector('input[name="channel"]:checked') || {}).value || '');
-    data.append('comment', form.comment.value.trim()); data.append('page', location.href);
+    var want = (form.querySelector('input[name="want"]:checked') || {}).value || '';
+    data.append('comment', (want ? '[' + want + '] ' : '') + form.comment.value.trim()); data.append('page', location.href);
     new URLSearchParams(location.search).forEach(function (v, k) { if (/^utm_|^gclid$|^yclid$|^fbclid$/.test(k)) data.append(k, v); });
     var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = 'Отправляем…';

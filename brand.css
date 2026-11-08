@@ -309,3 +309,91 @@ a{color:var(--accent)}
 
 .notebook .packlist label{font-size:26px}
 @media (max-width:640px){.notebook .packlist label{font-size:23px}}
+
+/* ===== правки к запуску (07.11) ===== */
+:root{--muted:#41575A}
+.lead,.small,.sub{color:var(--muted)}
+.vhero .sub,.vhero .kicker{color:rgba(255,255,255,.92)}
+/* цена в первом экране — только на телефоне, на ПК есть карточка справа */
+.hero-price{display:none;color:#fff;font-size:17px;margin:-10px 0 20px}
+.hero-price b{color:var(--orange,#F59F43);font-size:22px}
+.hero-price .deadline{display:block;font-size:14px;margin-top:4px;opacity:.95}
+.hero-price .deadline[hidden]{display:none}
+@media (max-width:899px){
+  .hero-price{display:block}
+  .hero-cta .btn-light{display:none}
+}
+.bc-deadline{margin:8px 0 0;padding:8px 12px;border-radius:10px;background:#FFF3E3;color:#7A3A06;font-size:14px;font-weight:600}
+.bc-deadline[hidden]{display:none}
+
+/* «оплачивается отдельно» — без красных крестиков */
+.extras-list{list-style:none;margin:0 0 6px;padding:0}
+.extras-list li{display:grid;gap:2px;padding:12px 0 12px 22px;border-top:1px solid var(--line);position:relative}
+.extras-list li:first-child{border-top:0}
+.extras-list li:before{content:"+";position:absolute;left:2px;top:11px;color:var(--accent);font-weight:700}
+.extras-list b{font-weight:600}
+.extras-list span{font-size:15px;color:var(--muted);line-height:1.5}
+
+/* почему не собрать самому */
+.why-us{margin-top:28px;padding:24px;border-radius:var(--r);background:var(--dark);color:#fff}
+.why-us h3{color:#fff;font-family:var(--body);font-weight:600;font-size:20px;margin-bottom:14px}
+.why-us ul{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.why-us li{color:rgba(255,255,255,.88);font-size:16px;line-height:1.55}
+.why-us b{color:#fff;display:block}
+@media (min-width:900px){.why-us{padding:28px 32px}.why-us ul{grid-template-columns:repeat(3,1fr);gap:28px}}
+
+/* страхи первого круиза */
+.fears{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px}
+.fears li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.fears b{display:block;font-family:var(--head);font-weight:400;font-size:22px;line-height:1.2;margin-bottom:8px;color:var(--ink)}
+.fears span{color:var(--muted);font-size:16px;line-height:1.55}
+@media (min-width:760px){.fears{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.fears{grid-template-columns:repeat(4,1fr)}}
+
+/* чередование фонов после сокращения страницы */
+#vklyucheno.sec,#marshrut.sec,#den.sec,#turisty.sec,#o-nas.sec,#voprosy.sec{background:#fff}
+#strahi.sec,#layner.sec,#viza.sec{background:var(--bg2)}
+#kino.sec,#otzyvy.sec{background:var(--dark)}
+/* вечер на борту: 4 ролика сеткой 2×2 */
+#kino .cine{grid-template-columns:1fr 1fr}
+#kino .clip.big{grid-column:auto;grid-row:auto;aspect-ratio:16/9}
+#kino .clip.big figcaption{font-size:15px;padding:34px 14px 12px}
+.vhero h1{max-width:18ch}
+@media (max-width:599px){.vhero h1{font-size:31px}.vhero .sub{font-size:16px;margin:12px 0 18px}.hero-price{margin:-4px 0 16px}}
+@media (min-width:900px){#kino .cine{grid-template-columns:repeat(4,1fr)}}
+
+/* ===== правки по разбору (07.11, вторая волна) ===== */
+/* плавающая плашка на ПК закрывала текст — кнопка и так есть в шапке */
+.stick{display:none!important}
+/* на телефоне цена уже в первом экране, карточка её дублировала */
+@media (max-width:899px){.vhero .book-card{display:none}}
+
+/* «что вы получаете у нас» — светлый блок, 2×2 */
+.why-us{background:#fff;color:var(--ink);border:1px solid var(--line);border-left:4px solid var(--orange)}
+.why-us h3{color:var(--ink);font-family:var(--head);font-weight:400;font-size:clamp(22px,2.4vw,28px);line-height:1.2;margin-bottom:18px}
+.why-us li{color:var(--muted)}
+.why-us b{color:var(--ink)}
+@media (min-width:900px){.why-us ul{grid-template-columns:1fr 1fr;gap:22px 40px}}
+
+/* почему бронировать сейчас */
+.now-strip-wrap{margin-top:20px}
+.now-strip{display:grid;gap:8px;padding:18px 22px;border-radius:var(--r);background:#FFF3E3;color:#5E2C05;font-size:15.5px;line-height:1.5}
+.now-strip b{font-size:17px;color:#7A3A06}
+.now-strip span:before{content:"→ ";color:var(--accent);font-weight:700}
+.now-strip .deadline{font-weight:700}
+.now-strip .deadline[hidden]{display:none}
+@media (min-width:900px){.now-strip{grid-template-columns:auto 1fr 1fr;align-items:start;gap:10px 28px}.now-strip .deadline{grid-column:2/-1}}
+
+/* туристы: три кадра крупно */
+.strip3{grid-auto-columns:minmax(220px,1fr)}
+@media (min-width:1100px){.strip3{grid-template-columns:repeat(3,1fr);grid-auto-flow:row}}
+
+/* дипломы — в окно по кнопке */
+.aw-dip{display:block;margin:6px auto 4px;background:none;border:1.5px solid var(--dark);color:var(--dark);border-radius:999px;padding:9px 18px;font:inherit;font-weight:600;font-size:15px;cursor:pointer}
+.aw-dip:hover{background:var(--dark);color:#fff}
+
+/* каюта — светлая плашка, тёмных блоков меньше */
+.cabin-strip{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.cabin-strip h3{color:var(--ink)}
+.cabin-strip p{color:var(--muted)}
+.strip3 figure{aspect-ratio:4/5}.strip3 figure img,.strip3 figure video{width:100%;height:100%;object-fit:cover}

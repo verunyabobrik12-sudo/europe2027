@@ -1,0 +1,183 @@
+/* Образец «Закат»: тёплая гамма из видео первого экрана — абрикос, коралл, роза и сумеречный фиолетовый.
+   Подключается последним, поверх brand.css. Вернуть прежний вид: убрать строку sunset.css из <head>. */
+:root{
+  --sun1:#FFB36B; --sun2:#F58A6E; --sun3:#E56F8F; --sun4:#8E5A9E;
+  --grad:linear-gradient(120deg,#FFA65C 0%,#F2795F 50%,#DE5F86 100%);
+  --dusk:linear-gradient(160deg,#2C2140 0%,#47294F 55%,#74375A 100%);
+  --bg:#FFFAF5; --bg2:#FFF0E6; --ink:#2A1E2B; --muted:#6B5560; --line:#F2DDD3;
+  --accent:#C2482F; --accent-d:#A23A24;
+  --dark:#33264A; --dark2:#2C2140;
+  --shadow:0 12px 32px rgba(194,72,47,.10), 0 2px 6px rgba(42,30,43,.05);
+}
+body{background:var(--bg);color:var(--ink)}
+.lead{color:var(--muted)}
+
+/* цифры и цены в заголовках — закатным градиентом */
+.sec h2 .num,.bc-price b,.hero-price b,.ship-facts b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-price b{background:linear-gradient(120deg,#FFC48A,#FF9A7A 60%,#FF8FA8);-webkit-background-clip:text;background-clip:text}
+
+/* фоны секций: ни одного белого блока подряд */
+#vklyucheno.sec{background:linear-gradient(180deg,#FFF6EE 0%,#FFE6DC 100%)}
+#strahi.sec{background:linear-gradient(180deg,#FFE6DC 0%,#F7E1EC 100%)}
+#marshrut.sec{background:linear-gradient(180deg,#F7E1EC 0%,#E3F1F3 30%,#FFF3E8 100%)}
+#layner.sec{background:#FFF7EF}
+#den.sec{background:linear-gradient(180deg,#FFF7EF,#FFE9DF)}
+#turisty.sec{background:#FFE9DF}
+#o-nas.sec{background:linear-gradient(180deg,#FFF6EE,#FFE6DC)}
+#viza.sec{background:linear-gradient(180deg,#FFE6DC,#F7E1EC)}
+#voprosy.sec{background:#FFFAF5}
+
+/* тёмные секции — сумерки вместо тёмно-зелёного */
+#kino.sec,#otzyvy.sec,#zayavka.sec{background:var(--dusk);color:#fff}
+.stick,.mbar{--x:0}
+.stick{background:var(--dark2)}
+
+/* ===== Цена ===== */
+.pcol{border:0;background:#fff;border-radius:22px;box-shadow:var(--shadow)}
+.pcol h3{font-family:var(--head);font-weight:400;font-size:24px;margin-bottom:12px}
+.pin-yes td.ok{color:#fff}
+.pin-yes td.ok:before{content:"✓";display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--grad);color:#fff;font-size:13px;font-weight:700}
+.pcol td{border-top-color:var(--line)}
+.pin-yes td:first-child{color:var(--accent);font-weight:500}
+.pin-no{background:#FFF8F3;border:2px dashed #EFA48C;box-shadow:none}
+.pin-no h3{color:var(--accent)}
+.extras-list li{border-top-color:rgba(194,72,47,.18)}
+.extras-list li:before{content:"";top:19px;width:9px;height:9px;border-radius:50%;background:var(--grad)}
+.extras-list span{color:#6B4B4B}
+
+@media (max-width:759px){
+  .pcol{padding:20px 18px}
+  .pin-yes table,.pin-yes tbody{display:block}
+  .pin-yes tr{display:grid;grid-template-columns:1fr 30px;column-gap:10px;padding:11px 0;border-top:1px solid var(--line)}
+  .pin-yes tr:first-child{border-top:0;padding-top:4px}
+  .pin-yes td{display:block;border:0;padding:0;width:auto}
+  .pin-yes td:first-child{grid-column:1;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+  .pin-yes td:nth-child(2){grid-column:1;font-size:16px;line-height:1.4}
+  .pin-yes td.ok{grid-column:2;grid-row:1 / span 2;align-self:center;text-align:right}
+}
+
+/* «Почему у нас» — карточка-сумерки */
+.why-us{background:var(--dusk);border:0;border-radius:22px;color:#fff;box-shadow:0 18px 40px rgba(71,41,79,.25);position:relative;overflow:hidden}
+.why-us:before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--grad)}
+.why-us h3{color:#fff}
+.why-us li{color:rgba(255,255,255,.82)}
+.why-us b{color:#FFC08A;margin-bottom:2px}
+
+.now-strip{background:#fff;color:var(--ink);box-shadow:var(--shadow);border-radius:22px;position:relative;overflow:hidden;padding-left:28px}
+.now-strip:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--grad)}
+.now-strip b{color:var(--accent)}
+
+/* ===== Страхи: карточки с иконками, на телефоне листаются ===== */
+.fears li{border:0;border-radius:22px;background:#fff;box-shadow:var(--shadow);padding:22px 22px 24px}
+.fears .ic{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--grad);color:#fff;margin-bottom:14px;box-shadow:0 6px 14px rgba(242,121,95,.35)}
+.fears b{color:var(--ink)}
+.fears span{color:var(--muted)}
+@media (max-width:759px){
+  .fears{grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(var(--pad) * -1);margin-right:calc(var(--pad) * -1);padding:6px var(--pad) 22px;scrollbar-width:none}
+  .fears::-webkit-scrollbar{display:none}
+  .fears li{scroll-snap-align:center}
+}
+
+/* ===== Карта маршрута: цветное море ===== */
+#sea stop:first-child{stop-color:#D3EEF1}
+#sea stop:last-child{stop-color:#9FD3DE}
+.map{border:0;box-shadow:var(--shadow)}
+.map [fill="#F6F0E7"]{fill:#FFF3E4}
+.map [fill="#EBCFC2"]{fill:#FFD3B5}
+.map #route{stroke:#E8604C;stroke-width:4.5;stroke-dasharray:8 7}
+.days{scrollbar-width:none}.days::-webkit-scrollbar{display:none}
+@media (max-width:759px){.rt-photo{aspect-ratio:16/10;height:auto}}
+.map #routeBase{stroke:#fff;opacity:.9}
+.map .pin .dot{fill:var(--dark2)}
+.map .pin.on .dot,.map .pin:hover .dot,.map .pin:focus-visible .dot{fill:#E8604C}
+.map .pin .pulse{fill:#E8604C}
+.map .lbl{fill:var(--ink);stroke:#FFF3E4}
+.map #shipDot circle{fill:#FFA65C}
+.rt-map{background:#B7DFE7;border-radius:var(--r)}
+.route .days button{background:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(42,30,43,.06)}
+.days button[aria-selected="true"],.route .days button[aria-selected="true"]{background:var(--grad);border-color:transparent;color:#fff}
+.days button[aria-selected="true"] small{color:rgba(255,255,255,.85)}
+
+/* ===== Лайнер, день, виза ===== */
+.cabin-strip{background:#fff;border:0;box-shadow:var(--shadow);border-radius:22px}
+.hours .hr{background:var(--grad);color:#fff;border-color:#fff}
+.steps li:before{border:0;background:var(--grad);color:#fff}
+.awards{border:0;box-shadow:var(--shadow);border-radius:22px}
+
+/* ===== Кто мы: карта офиса ===== */
+.about-facts b{color:var(--accent)}
+.office-map{margin-top:22px}
+.office-map iframe{display:block;width:100%;height:300px;border:0;border-radius:22px;box-shadow:var(--shadow);background:#F4E9E1}
+.office-map a{display:inline-block;margin-top:10px;font-weight:600}
+@media (min-width:900px){.office-map iframe{height:340px}}
+
+/* FAQ */
+.faq summary:after,.faq summary::marker{color:var(--accent)}
+
+/* ===== Внутренние страницы (лайнер, остановки, отели) ===== */
+.ihero{background:linear-gradient(rgba(44,33,64,.55),rgba(116,55,90,.55)),var(--bg-img) center/cover,#47294F}
+.inner .foot{background:#2C2140}
+.pblock{background:#FFFAF5}
+.pblock.alt{background:linear-gradient(180deg,#FFF0E6,#FBE6EC)}
+.pnum{background:var(--grad)}
+.pdate{background:#FFE1C7;color:var(--accent-d)}
+.phead h2{color:var(--ink)}
+.phours{background:var(--dusk)}
+.phours:before{background:#FFA65C}
+.pc{border-top:0;box-shadow:var(--shadow);border-radius:20px}
+.pic{background:var(--grad)}
+.pic svg{stroke:#fff}
+.pc h3{color:var(--accent)}
+
+/* остановки: фото слева, видео и текст справа — без пустых полос и растянутых кадров */
+.pgal{grid-template-columns:1fr 1fr!important;grid-template-rows:auto!important;gap:10px}
+.pgal img,.pgal .pmain{aspect-ratio:4/3!important;min-height:0!important;grid-row:auto!important;height:auto}
+.pgal .pmain{grid-column:1 / -1;aspect-ratio:16/10!important}
+.pgal.g2 img:not(.pmain){grid-column:1 / -1;aspect-ratio:21/9!important}
+.pvideo{max-width:none;width:100%;aspect-ratio:16/9;margin:0 0 20px;align-items:center;padding:0 18px 0 84px;font-size:17px}
+.pvideo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(44,33,64,.75),rgba(44,33,64,.1) 70%);z-index:0}
+.pvideo .in-play,.pvideo b{z-index:1}
+.pvideo .in-play{background:var(--grad);color:#fff}
+@media (min-width:900px){
+  .pblock .wrap{display:grid;grid-template-columns:1.2fr 1fr;column-gap:40px;align-items:start}
+  .pblock .phead{grid-column:1 / -1}
+  .pblock .pgal{grid-column:1;grid-row:2 / span 3;margin:0}
+  .pblock .pvideo,.pblock .plead,.pblock .pcards{grid-column:2}
+  .pblock .pcards{grid-template-columns:1fr;gap:12px}
+  .pblock .plead{font-size:17.5px;margin-bottom:18px}
+  .pblock .pc{padding:16px 18px;display:grid;grid-template-columns:40px 1fr;column-gap:14px}
+  .pblock .pc .pic{grid-row:span 2;margin:0}
+}
+
+/* ===== Гайд по стоянке (приманка за контакт) ===== */
+#gidy.sec{background:var(--dusk);color:#fff;overflow:hidden}
+.gid{display:grid;gap:36px;align-items:center}
+.gid-kicker{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#FFC08A;margin-bottom:10px}
+#gidy h2{color:#fff}
+#gidy h2 .num{background:none;-webkit-text-fill-color:#FFC08A;color:#FFC08A}
+#gidy .lead{color:rgba(255,255,255,.82)}
+.gid-list{list-style:none;margin:18px 0 22px;padding:0;display:grid;gap:10px}
+.gid-list li{position:relative;padding-left:26px;color:rgba(255,255,255,.85);line-height:1.5}
+.gid-list li:before{content:"";position:absolute;left:0;top:8px;width:12px;height:12px;border-radius:50%;background:var(--grad)}
+.gid-list b{color:#fff}
+.gid-form{display:grid;gap:10px;max-width:460px}
+.gid-form input:not(.hp){font:inherit;font-size:16px;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff}
+.gid-form input::placeholder{color:rgba(255,255,255,.6)}
+.gid-form .btn{width:100%}
+.gid-form .hp{position:absolute;left:-9999px}
+.gid-note{color:rgba(255,255,255,.6)!important;font-size:12.5px;line-height:1.45}
+.gid-form.sent input,.gid-form.sent button,.gid-form.sent .gid-note{display:none}
+.gid-msg{font-size:15.5px;line-height:1.5}
+.gid-msg.err{color:#FFB3A1}
+.gid-msg.ok{color:#fff;display:grid;gap:12px}
+.gid-msg .btn{justify-self:start}
+.gid-pages{position:relative;height:420px}
+.gid-pages img{position:absolute;width:210px;height:auto;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.35);border:3px solid rgba(255,255,255,.85)}
+.gid-pages img:nth-child(1){left:50%;top:0;transform:translateX(-50%);z-index:3}
+.gid-pages img:nth-child(2){left:6%;top:40px;transform:rotate(-7deg);z-index:2}
+.gid-pages img:nth-child(3){right:6%;top:40px;transform:rotate(7deg);z-index:1}
+@media (min-width:900px){.gid{grid-template-columns:1.05fr 1fr;gap:56px}.gid-pages{height:520px}.gid-pages img{width:260px}}
+@media (max-width:420px){.gid-pages{height:360px}.gid-pages img{width:170px}}
+.gid{grid-template-areas:"copy" "pages" "form"}
+.gid-copy{grid-area:copy}.gid-pages{grid-area:pages}.gid-form{grid-area:form}
+@media (min-width:900px){.gid{grid-template-areas:"copy pages" "form pages";row-gap:6px}}

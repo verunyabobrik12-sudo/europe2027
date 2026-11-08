@@ -9,14 +9,19 @@
 <meta name="description" content="Барселона, Аликанте, Гибралтар, Кадис, Ла-Корунья, Бильбао, Ла-Рошель и Киль за 11 дней. Перелёты из Варшавы, отели в Барселоне и Гамбурге, трансфер и круиз — от 1 590 € на человека. С группой едет менеджер.">
 <meta property="og:title" content="Круиз из Барселоны: Испания, Франция и Германия за 11 дней">
 <meta property="og:description" content="Перелёты, два отеля, трансфер и 10 ночей на MSC Euribia — от 1 590 € на человека. С группой едет наш менеджер.">
-<meta property="og:image" content="people/hero.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://verunyabobrik12-sudo.github.io/europe2027/">
+<meta property="og:image" content="https://verunyabobrik12-sudo.github.io/europe2027/promo/og-sunset.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
-<link rel="stylesheet" href="rich.css?v=5">
-<link rel="stylesheet" href="brand.css?v=9">
+<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="rich.css?v=6">
+<link rel="stylesheet" href="brand.css?v=11">
 </head>
 <body>
 <a class="skip" href="#main">К содержимому</a>
@@ -41,15 +46,17 @@
 
 <!-- ===== 1. Первый экран: видео заката с палубы ===== -->
 <section class="vhero" id="hero" aria-labelledby="hero-h">
-  <video class="vhero-video" id="heroVideo" src="people/hero.mp4" poster="people/hero.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <video class="vhero-video" id="heroVideo" poster="promo/hero-sunset-d.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <script>(function(){var v=document.getElementById("heroVideo"),m=window.matchMedia("(max-width: 899px) and (orientation: portrait)").matches;v.poster=m?"promo/hero-couple-m.jpg":"promo/hero-sunset-d.jpg";v.src=m?"promo/hero-couple-m.mp4":"promo/hero-sunset-d.mp4";})();</script>
   <div class="vhero-shade" aria-hidden="true"></div>
   <div class="vhero-in">
     <div class="vhero-copy">
       <p class="kicker">14–24 апреля 2027 · одна дата · группа из Беларуси</p>
-      <h1 id="hero-h">Испания, Франция и&nbsp;Германия на&nbsp;одном лайнере</h1>
-      <p class="sub">Круиз из Барселоны в Киль: 7 городов за&nbsp;<span class="num">11</span>&nbsp;дней. Днём гуляете по городу, вечером встречаете закат на палубе.</p>
+      <h1 id="hero-h">Круиз вдоль Испании&nbsp;— и&nbsp;наш человек рядом</h1>
+      <p class="sub">От Барселоны до Германии: 8 портов за&nbsp;<span class="num">11</span>&nbsp;дней на лайнере MSC Euribia. Перелёты, отели и посадку берём на себя, а&nbsp;менеджер едет с&nbsp;группой весь маршрут.</p>
+      <p class="hero-price">от <b>1 590 €</b> на человека · перелёты, 2 отеля и круиз<span class="deadline" hidden></span></p>
       <div class="hero-cta">
-        <a class="btn btn-gold" href="#zayavka">Забронировать место</a>
+        <a class="btn btn-gold" href="#zayavka" data-want="Расчёт с визой">Получить расчёт с визой</a>
         <a class="btn btn-light" href="#marshrut">Смотреть маршрут</a>
       </div>
       <p class="trust"><b>5,0 ★</b> на Яндекс Картах · 75 оценок и 70 отзывов</p>
@@ -58,6 +65,7 @@
       <p class="bc-dates">14–24 апреля 2027 · 11 дней</p>
       <p class="bc-price"><span>от</span> <b>1 590 €</b></p>
       <p class="bc-note">на человека, вдвоём во внутренней каюте</p>
+      <p class="deadline bc-deadline" hidden></p>
       <ul class="bc-list">
         <li>Перелёты Варшава — Барселона и Гамбург — Варшава</li>
         <li>Отели в Барселоне и Гамбурге</li>
@@ -69,22 +77,7 @@
       <a class="bc-tg" href="https://t.me/+375447884422" target="_blank" rel="noopener">или спросить в Telegram</a>
     </aside>
   </div>
-  <p class="vhero-cap">Видео нашей туристки: закат с палубы лайнера MSC</p>
-</section>
-
-<section class="sec" id="schet" aria-label="До отплытия">
-  <div class="wrap widgets">
-    <div class="widget">
-      <h3>До отплытия из Барселоны</h3>
-      <div class="count" id="count" role="timer"><div><b>–</b><span>дней</span></div><div><b>–</b><span>часов</span></div><div><b>–</b><span>минут</span></div><div><b>–</b><span>секунд</span></div></div>
-      <p class="note">Отплытие 14 апреля 2027 в 18:00 по местному времени.</p>
-    </div>
-    <div class="widget didyou">
-      <p class="dy-label">Знали ли вы?</p>
-      <div class="q" id="fact" aria-live="polite"></div>
-      <button class="btn btn-ghost btn-sm" id="nextFact" type="button">Ещё факт</button>
-    </div>
-  </div>
+  <p class="vhero-cap">Видео: MSC Cruises</p>
 </section>
 
 <section class="sec" id="vklyucheno" aria-labelledby="incl-h">
@@ -110,11 +103,48 @@
       </div>
       <div class="pcol pin-no">
         <h3>Оплачивается отдельно</h3>
-        <table><tr><td class="no" aria-label="не входит"></td><td><b>Дорога Минск ↔ Варшава</b></td></tr><tr><td class="no" aria-label="не входит"></td><td><b>Консультационная услуга</b></td></tr><tr><td class="no" aria-label="не входит"></td><td><b>Визовая поддержка</b></td></tr><tr><td class="no" aria-label="не входит"></td><td><b>Сбор визового центра Испании</b></td></tr><tr><td class="no" aria-label="не входит"></td><td><b>Страховка</b></td></tr><tr><td class="no" aria-label="не входит"></td><td><b>Экскурсии в портах</b></td></tr></table>
-        <a class="btn btn-gold btn-block" href="#zayavka">Узнать итоговую сумму</a>
+        <ul class="extras-list">
+          <li><b>Виза Испании</b><span>консульский и сервисный сбор, визовая поддержка и консультационная услуга. Если шенген уже есть и подходит — платить за визу не нужно.</span></li>
+          <li><b>Страховка</b><span>медицинская, оформим вместе с визой.</span></li>
+          <li><b>Дорога Минск ↔ Варшава</b><span>поможем с трансфером для группы.</span></li>
+          <li><b>Экскурсии в портах</b><span>по желанию: города удобно смотреть и самим, менеджер подскажет маршрут.</span></li>
+        </ul>
+        <a class="btn btn-gold btn-block" href="#zayavka" data-want="Расчёт с визой">Посчитать сумму с визой</a>
         <a class="more" href="otel.html">Про отели в Барселоне и Гамбурге →</a>
       </div>
     </div>
+    <div class="why-us">
+      <h3>Можно купить круиз на сайте MSC. Вот что вы получаете у нас</h3>
+      <ul>
+        <li><b>Одна бронь вместо пяти.</b> Круиз, два перелёта, два отеля и трансфер уже состыкованы по датам и времени. Не нужно сидеть на пяти сайтах на английском и следить за пересадками.</li>
+        <li><b>Если что-то сдвинется — решаем мы.</b> Перенесли рейс или поменялось время стоянки — менеджер пересоберёт стыковки, а не вы в аэропорту.</li>
+        <li><b>Виза под этот тур.</b> Документы и брони готовим сразу под круиз и записываем в визовый центр в Минске.</li>
+        <li><b>Своя компания на борту.</b> Группа из Беларуси и менеджер, который встречает в Варшаве и едет до конца. В портах можно гулять с группой или самим.</li>
+      </ul>
+    </div>
+  </div>
+
+
+<div class="wrap now-strip-wrap"><div class="now-strip">
+  <b>Почему бронировать сейчас</b>
+  <span>Цены на каюты MSC растут по мере того, как лайнер заполняется: ближе к весне та же каюта стоит дороже.</span>
+  <span>На шенген Испании лучше подать за 2–3 месяца: запись в визовый центр бывает занята на недели вперёд.</span>
+  <span class="deadline now-deadline" hidden></span>
+</div></div>
+</section>
+
+<section class="sec" id="strahi" aria-labelledby="fears-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="fears-h">Первый круиз? Вот что обычно волнует</h2>
+      <p class="lead">Если едете с подругой — цена та же, каюта на двоих. Если одна — поможем найти соседку из группы.</p>
+    </div>
+    <ul class="fears">
+      <li><b>«Не говорю по-английски»</b><span>На борту говорят по-английски, поэтому с группой едет наш менеджер. Он поможет на посадке, в ресторане и в порту.</span></li>
+      <li><b>«Боюсь отстать от лайнера»</b><span>Время возвращения на борт пишут в программе дня. Менеджер напомнит его заранее, а в город можно выйти вместе с группой.</span></li>
+      <li><b>«Откажут в визе»</b><span>Готовим документы под этот круиз, со всеми бронями, и подаём заранее. А чтобы не рисковать деньгами, оформите страховку от невыезда: она покрывает отказ в визе. Поможем выбрать. <a href="#viza">Как оформляем визу</a></span></li>
+      <li><b>«Будет качать»</b><span>Лайнер длиной 331 метр со стабилизаторами. В апреле море обычно спокойное, в Бискайском заливе бывает волна: возьмите таблетки от укачивания.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -123,7 +153,7 @@
     <div class="route-head">
       <div>
         <h2 id="route-h">Маршрут по дням</h2>
-        <p class="lead">7 городов в четырёх странах и 3 дня в море. Выберите день — кораблик поплывёт по карте.</p>
+        <p class="lead">8 портов: Испания, Гибралтар, Франция и Германия, плюс 3 дня в море. Выберите день — кораблик поплывёт по карте.</p>
       </div>
       <div class="route-arrows">
         <button class="arrow" id="prevDay" type="button" aria-label="Предыдущий день">←</button>
@@ -136,17 +166,7 @@
       <figure class="rt-photo day-photo" id="routePorthole" aria-hidden="true"></figure>
     </div>
     <div class="day-card" id="dayCard" role="tabpanel" aria-live="polite"></div>
-    <p class="small route-note">Расписание и время стоянок может изменить судоходная компания. Дни в море: 18, 22 и 23 апреля.</p>
-  </div>
-</section>
-
-<section class="sec" id="porty" aria-labelledby="ports-h">
-  <div class="wrap">
-    <div class="sec-head row-head">
-      <h2 id="ports-h">8 портов маршрута</h2>
-      <div><p class="lead">Время в каждом городе и главное, что успеть.</p><a class="more" href="ostanovki.html">Подробно про каждую остановку →</a></div>
-    </div>
-    <ul class="pgrid"><li><img src="img/port-barcelona.jpg" alt="Барселона" loading="lazy" width="1400" height="933"><div><b>Барселона</b><small>Испания · посадка, отплытие 18:00</small><span>Город Гауди: Саграда Фамилия, Рамбла, рынок Бокерия. Прилетаете накануне, поэтому есть вечер и утро на прогулку до посадки.</span></div></li><li><img src="img/port-alicante.jpg" alt="Аликанте" loading="lazy" width="1400" height="933"><div><b>Аликанте</b><small>Испания · 9 часов</small><span>Белый город у моря с пальмовой набережной. Крепость Санта-Барбара на скале видна прямо из порта — до неё можно подняться на лифте.</span></div></li><li><img src="img/port-gibraltar.jpg" alt="Гибралтар" loading="lazy" width="1400" height="933"><div><b>Гибралтар</b><small>Британская территория · 8 часов</small><span>Британская скала на краю Европы. Канатная дорога наверх, дикие макаки и вид на Африку через пролив.</span></div></li><li><img src="img/port-cadiz.jpg" alt="Кадис" loading="lazy" width="1400" height="933"><div><b>Кадис</b><small>Испания · 10 часов</small><span>Один из старейших городов Европы, ему около трёх тысяч лет. Золотой купол собора, белые улицы и океанский пляж в десяти минутах от причала.</span></div></li><li><img src="img/port-coruna.jpg" alt="Ла-Корунья" loading="lazy" width="1400" height="933"><div><b>Ла-Корунья</b><small>Испания · 9 часов</small><span>Зелёная Галисия и самый старый действующий маяк мира — Башня Геркулеса. Набережная со стеклянными балконами и осьминог по-галисийски.</span></div></li><li><img src="img/port-bilbao.jpg" alt="Бильбао" loading="lazy" width="1400" height="933"><div><b>Бильбао</b><small>Испания · 10 часов</small><span>Страна Басков: музей Гуггенхайма из титана и старый город с пинчос-барами. Самая длинная стоянка — 10 часов.</span></div></li><li><img src="img/port-larochelle.jpg" alt="Ла-Рошель" loading="lazy" width="1400" height="933"><div><b>Ла-Рошель</b><small>Франция · 7 часов</small><span>Единственный французский порт маршрута. Две средневековые башни у входа в гавань, аркады и рыбный рынок.</span></div></li><li><img src="img/port-kiel.jpg" alt="Киль" loading="lazy" width="1400" height="933"><div><b>Киль</b><small>Германия · высадка 09:00</small><span>Конечная точка: высадка утром, трансфер в Гамбург и вечер в городе. Домой летите на следующий день.</span></div></li></ul>
+    <p class="small route-note">Расписание и время стоянок может изменить судоходная компания. Дни в море: 18, 22 и 23 апреля. <a href="ostanovki.html">Подробно про каждую остановку →</a></p>
   </div>
 </section>
 
@@ -169,10 +189,6 @@
       <figure><img src="img/ship-indoor-pool.jpg" alt="Крытый бассейн" width="1400" height="933" loading="lazy"><figcaption>Крытый бассейн</figcaption></figure>
       <figure><img src="img/ship-lounge.jpg" alt="Лаунж с панорамными окнами" width="1400" height="933" loading="lazy"><figcaption>Лаунжи с видом на море</figcaption></figure>
       <figure><img src="img/ship-aquapark.jpg" alt="Аквапарк" width="1400" height="933" loading="lazy"><figcaption>Аквапарк и горки</figcaption></figure>
-      <figure><img src="img/ship-buffet.jpg" alt="Шведский стол" width="800" height="533" loading="lazy"><figcaption>Шведский стол</figcaption></figure>
-      <figure><img src="img/ship-theme.jpg" alt="Тематический ресторан" width="800" height="533" loading="lazy"><figcaption>Тематический ресторан</figcaption></figure>
-      <figure><img src="img/ship-poolbar2.jpg" alt="Бар у бассейна" width="800" height="533" loading="lazy"><figcaption>Бар у бассейна</figcaption></figure>
-      <figure><img src="img/ship-sweets.jpg" alt="Кондитерская на борту" width="800" height="533" loading="lazy"><figcaption>Сладости на борту</figcaption></figure>
     </div>
     <div class="inside" id="vnutri">
       <h3 class="inside-h">Лайнер изнутри</h3>
@@ -182,15 +198,7 @@
         <button class="in-tile" type="button" data-modal="image" data-src="img/palubi.jpg" data-title="Схема палуб и кают MSC Euribia" style="--bg:url(img/palubi.jpg)"><span class="in-play" aria-hidden="true">▤</span><b>Схема палуб и кают</b><span>18 палуб: где рестораны, бассейны и каюты</span></button>
       </div>
     </div>
-    <h3 class="sub-h">Что есть на борту</h3>
-    <ul class="onboard">
-      <li><b>Рестораны</b><span>основные рестораны и шведский стол — в цене, тематические рестораны — за доплату</span></li>
-      <li><b>Бассейны</b><span>несколько бассейнов и джакузи на верхней палубе, крытый бассейн под стеклянной крышей</span></li>
-      <li><b>Аквапарк</b><span>горки на верхней палубе</span></li>
-      <li><b>Театр</b><span>вечерние шоу каждый день, входят в цену</span></li>
-      <li><b>Спа и спортзал</b><span>спортзал бесплатно, спа — за доплату</span></li>
-      <li><b>Бары и лаунжи</b><span>панорамные лаунжи, бар у бассейна; напитки платно</span></li>
-    </ul>
+    
     <aside class="cabin-strip">
       <img src="img/ship-cabin2.jpg" alt="Внутренняя каюта MSC Euribia" width="800" height="533" loading="lazy">
       <div>
@@ -220,31 +228,12 @@
 <section class="sec dark" id="kino" aria-labelledby="cine-h">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="cine-h">А вечером вы вернётесь сюда</h2>
-      <p class="lead">Закат на палубе, тост с новыми друзьями, шоу и ужин. После дня в порту это лучшая часть круиза.</p>
+      <h2 id="cine-h">Вечер на борту</h2>
+      <p class="lead">Шоу, ужин, бокал вина и закат с палубы. После дня в порту это лучшая часть круиза.</p>
     </div>
-    <div class="cine"><figure class="clip big"><img src="promo/aerial.jpg" alt="" loading="lazy"><video data-src="promo/aerial.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Лайнер на закате</figcaption></figure><figure class="clip"><img src="promo/toast.jpg" alt="" loading="lazy"><video data-src="promo/toast.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Тост на палубе</figcaption></figure><figure class="clip"><img src="promo/dance.jpg" alt="" loading="lazy"><video data-src="promo/dance.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Вечернее шоу</figcaption></figure><figure class="clip"><img src="promo/wine.jpg" alt="" loading="lazy"><video data-src="promo/wine.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Дегустация вина</figcaption></figure><figure class="clip"><img src="promo/slides.jpg" alt="" loading="lazy"><video data-src="promo/slides.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Аквапарк с высоты</figcaption></figure><figure class="clip"><img src="promo/chef.jpg" alt="" loading="lazy"><video data-src="promo/chef.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Повара у вас на глазах</figcaption></figure></div>
+    <div class="cine"><figure class="clip big"><img src="promo/dance.jpg" alt="" loading="lazy"><video data-src="promo/dance.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Вечернее шоу</figcaption></figure><figure class="clip"><img src="promo/wine.jpg" alt="" loading="lazy"><video data-src="promo/wine.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Дегустация вина</figcaption></figure><figure class="clip"><img src="promo/chef.jpg" alt="" loading="lazy"><video data-src="promo/chef.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Повара у вас на глазах</figcaption></figure><figure class="clip"><img src="promo/slides.jpg" alt="" loading="lazy"><video data-src="promo/slides.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Аквапарк с высоты</figcaption></figure></div>
     <div class="reels4"><figure class="reel"><img src="promo/v-dance.jpg" alt="" loading="lazy"><video data-src="promo/v-dance.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Закат вдоль борта</figcaption></figure><figure class="reel"><img src="promo/v-jacuzzi.jpg" alt="" loading="lazy"><video data-src="promo/v-jacuzzi.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Джакузи на закате</figcaption></figure><figure class="reel"><img src="promo/v-chef.jpg" alt="" loading="lazy"><video data-src="promo/v-chef.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Ужин у стойки</figcaption></figure><figure class="reel"><img src="promo/v-slide.jpg" alt="" loading="lazy"><video data-src="promo/v-slide.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Крутой спуск</figcaption></figure></div>
-    <p class="credit">Видео MSC Cruises; часть роликов снята на других лайнерах компании.</p>
-  </div>
-</section>
-
-<section class="sec" id="pasport" aria-labelledby="pass-h">
-  <div class="wrap pass-grid">
-    <div>
-      <h2 id="pass-h">Подарок каждому: гастро-паспорт</h2>
-      <p class="lead">Игровая книжка на 30 страниц от НеобхоДима. В каждом порту у вас одно главное блюдо, пара находок и маленькое задание на 10–15 минут.</p>
-      <ul class="pass-list">
-        <li>Пять пинчос за один день в Бильбао</li>
-        <li>Бинго «Скала» в Гибралтаре</li>
-        <li>Прогулка на 9 часов по Аликанте с картой</li>
-        <li>Открытка из Франции: напишите её за обедом в Ла-Рошели</li>
-      </ul>
-      <a class="btn btn-gold" href="#zayavka">Хочу в этот круиз</a>
-    </div>
-    <div class="pass-pages" aria-hidden="true">
-      <img src="passport/passport-bingo.jpg" alt="" loading="lazy"><img src="passport/passport-cover.jpg" alt="" loading="lazy"><img src="passport/passport-pintxos.jpg" alt="" loading="lazy">
-    </div>
+    <p class="credit">Видео MSC Cruises с разных лайнеров компании.</p>
   </div>
 </section>
 
@@ -252,15 +241,12 @@
   <div class="wrap">
     <div class="sec-head row-head">
       <h2 id="ppl-h">Круиз глазами наших туристов</h2>
-      <p class="lead">Фото и видео, которые прислали туристы из поездок на лайнерах MSC.</p>
+      <p class="lead">Без фильтров: так это выглядит на телефоне у наших туристок.</p>
     </div>
-    <div class="strip">
-      <figure><video src="people/dessert.mp4" poster="people/dessert.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video><figcaption>Десерты на шведском столе</figcaption></figure>
-      <figure><img src="people/cards.jpg" alt="Карты гостей на фоне лайнера MSC" loading="lazy" width="619" height="1100"><figcaption>Посадка</figcaption></figure>
+    <div class="strip strip3">
+      <figure><img src="people/friends.jpg" alt="Туристки в холле лайнера" loading="lazy" width="619" height="1100"><figcaption>Подруги в атриуме лайнера</figcaption></figure>
       <figure><img src="people/crew.jpg" alt="Туристы с экипажем лайнера" loading="lazy" width="619" height="1100"><figcaption>Вечер с экипажем</figcaption></figure>
-      <figure><img src="people/shrimp.jpg" alt="Ужин на фоне моря" loading="lazy" width="619" height="1100"><figcaption>Ужин у моря</figcaption></figure>
-      <figure><video src="people/club.mp4" poster="people/club.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video><figcaption>Вечер в клубе</figcaption></figure>
-      <figure><img src="people/friends.jpg" alt="Туристки в холле лайнера" loading="lazy" width="619" height="1100"><figcaption>Атриум лайнера</figcaption></figure>
+      <figure><video src="people/dessert.mp4" poster="people/dessert.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video><figcaption>Десерты на шведском столе</figcaption></figure>
     </div>
   </div>
 </section>
@@ -270,11 +256,11 @@
     <div class="rev-head">
       <div>
         <h2 id="rev-h">Что о нас пишут туристы</h2>
-        <p class="lead">Отзывы с Яндекс Карт о компании «НеобхоДима Тревел». На этот круиз группа ещё только собирается.</p>
+        <p class="lead">Отзывы с Яндекс Карт о компании «НеобхоДима Тревел»: круизы, туры по Испании и визы. На этот круиз группа ещё только собирается.</p>
       </div>
       <a class="rating" href="https://yandex.by/maps/org/neobkhodima_trevel/170623949287/reviews/" target="_blank" rel="noopener"><b>5,0</b><span>★★★★★</span><small>75 оценок и 70 отзывов на Яндекс Картах</small></a>
     </div>
-    <div class="rv-wrap"><button class="rv-arrow" id="rvPrev" type="button" aria-label="Предыдущие отзывы">←</button><div class="reviews rv-car" id="rvCar" tabindex="0" aria-label="Отзывы туристов"><figure><blockquote>«Ездили в круиз на MSC World Europe. Нам очень понравилось, мы довольные! Корабль классный, сам круиз классный, программа классная, города классные. Нам понравился формат отпуска, думаем, ещё не раз…»</blockquote><figcaption><b>Nadia Volobueva</b><span>Круиз на MSC World Europa · октябрь 2026</span></figcaption></figure><figure><blockquote>«Спасибо «НеобхоДима Тревел» и особенно менеджеру Дарье за тур Италия+Греция! Всё супер: города красивые, переезды комфортные, отели уютные, а в Греции вид из окна — просто вау.»</blockquote><figcaption><b>Александра Колодко</b><span>Италия + Греция · август 2026</span></figcaption></figure><figure><blockquote>«Огромное спасибо Анастасии, специалисту по визовой поддержке, за профессиональную помощь в оформлении визы! Подавался на визу Испании. И осуществил свою мечту! Я побывал в Испании…»</blockquote><figcaption><b>Вадим К.</b><span>Виза Испании · сентябрь 2026</span></figcaption></figure><figure><blockquote>«Тур прошёл замечательно, но отдельно хочу выделить работу менеджера Дарьи. Это настоящий профессионал. Дарья подобрала нам идеальный тур, учла все наши пожелания. Помогла открыть визу, собрать документы…»</blockquote><figcaption><b>Наталья</b><span>Тур «Испанская классика» · август 2026</span></figcaption></figure><figure><blockquote>«Большинство тур компаний отказали нам из-за отсутствия действующей визы. Но менеджер Екатерина подобрала идеальный индивидуальный вариант…»</blockquote><figcaption><b>Ангелина Бибик</b><span>Мадейра · июнь 2026</span></figcaption></figure><figure><blockquote>«Огромная благодарность специалисту по визовой поддержке Анастасии… за помощь в получении нашей первой шенгенской визы! Мы с мужем подавались на визу в Италию с непростым кейсом.»</blockquote><figcaption><b>Татьяна Таренть</b><span>Первая шенгенская виза · сентябрь 2026</span></figcaption></figure><figure><blockquote>«Хочу поблагодарить туроператора «НеобхоДима Тревел» за наш потрясающий автобусный тур по Италии и Греции! Поездка прошла на одном дыхании: продуманный маршрут, комфортный автобус и прекрасная организация каждого дня…»</blockquote><figcaption><b>Anastasia Kiryanova</b><span>Италия и Греция · август 2026</span></figcaption></figure><figure><blockquote>«Искренне благодарю менеджера Яну и турфирму «НеобхоДима Тревел» за потрясающий тур в Португалию. Благодарю за профессионализм и чуткое отношение, за помощь на всех этапах подготовки моего отдыха…»</blockquote><figcaption><b>Виталия Фесун</b><span>Португалия · июль 2026</span></figcaption></figure><figure><blockquote>«Ездили в тур Испания через Париж с компанией «НеобхоДима Тревел». Компания превзошла все ожидания! Скорость и качество работы, отношение к туристам, всё на высшем…»</blockquote><figcaption><b>Сергей И</b><span>Испания через Париж · август 2025</span></figcaption></figure><figure><blockquote>«Обратился в компанию НеобхоДима Тревел для подбора тура. Все заботы легли на плечи Даши, с чем она прекрасно справилась…»</blockquote><figcaption><b>Павел Маркун</b><span>Венеция на Новый год · январь</span></figcaption></figure></div><button class="rv-arrow" id="rvNext" type="button" aria-label="Следующие отзывы">→</button></div>
+    <div class="rv-wrap"><button class="rv-arrow" id="rvPrev" type="button" aria-label="Предыдущие отзывы">←</button><div class="reviews rv-car" id="rvCar" tabindex="0" aria-label="Отзывы туристов"><figure><blockquote>«Ездили в круиз на MSC World Europe. Нам очень понравилось, мы довольные! Корабль классный, сам круиз классный, программа классная, города классные. Нам понравился формат отпуска, думаем, ещё не раз…»</blockquote><figcaption><b>Nadia Volobueva</b><span>Круиз на MSC World Europa · октябрь 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Тур прошёл замечательно, но отдельно хочу выделить работу менеджера Дарьи. Это настоящий профессионал. Дарья подобрала нам идеальный тур, учла все наши пожелания. Помогла открыть визу, собрать документы…»</blockquote><figcaption><b>Наталья</b><span>Тур «Испанская классика» · август 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Огромное спасибо Анастасии, специалисту по визовой поддержке, за профессиональную помощь в оформлении визы! Подавался на визу Испании. И осуществил свою мечту! Я побывал в Испании…»</blockquote><figcaption><b>Вадим К.</b><span>Виза Испании · сентябрь 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Ездили в тур Испания через Париж с компанией «НеобхоДима Тревел». Компания превзошла все ожидания! Скорость и качество работы, отношение к туристам, всё на высшем…»</blockquote><figcaption><b>Сергей И</b><span>Испания через Париж · август 2025 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Огромная благодарность специалисту по визовой поддержке Анастасии… за помощь в получении нашей первой шенгенской визы! Мы с мужем подавались на визу в Италию с непростым кейсом.»</blockquote><figcaption><b>Татьяна Таренть</b><span>Первая шенгенская виза · сентябрь 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Большинство тур компаний отказали нам из-за отсутствия действующей визы. Но менеджер Екатерина подобрала идеальный индивидуальный вариант…»</blockquote><figcaption><b>Ангелина Бибик</b><span>Мадейра · июнь 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Искренне благодарю менеджера Яну и турфирму «НеобхоДима Тревел» за потрясающий тур в Португалию. Благодарю за профессионализм и чуткое отношение, за помощь на всех этапах подготовки моего отдыха…»</blockquote><figcaption><b>Виталия Фесун</b><span>Португалия · июль 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Хочу поблагодарить туроператора «НеобхоДима Тревел» за наш потрясающий автобусный тур по Италии и Греции! Поездка прошла на одном дыхании: продуманный маршрут, комфортный автобус и прекрасная организация каждого дня…»</blockquote><figcaption><b>Anastasia Kiryanova</b><span>Италия и Греция · август 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Спасибо «НеобхоДима Тревел» и особенно менеджеру Дарье за тур Италия+Греция! Всё супер: города красивые, переезды комфортные, отели уютные, а в Греции вид из окна — просто вау.»</blockquote><figcaption><b>Александра Колодко</b><span>Италия + Греция · август 2026 · Яндекс Карты</span></figcaption></figure><figure><blockquote>«Обратился в компанию НеобхоДима Тревел для подбора тура. Все заботы легли на плечи Даши, с чем она прекрасно справилась…»</blockquote><figcaption><b>Павел Маркун</b><span>Венеция на Новый год · январь · Яндекс Карты</span></figcaption></figure></div><button class="rv-arrow" id="rvNext" type="button" aria-label="Следующие отзывы">→</button></div>
     <p class="rv-more"><a class="btn btn-light" href="https://yandex.by/maps/org/neobkhodima_trevel/170623949287/reviews/" target="_blank" rel="noopener">Все 70 отзывов на Яндекс Картах</a></p>
   </div>
 </section>
@@ -315,61 +301,24 @@
         <img src="people/medal-2026.png" alt="Медаль Brand Award 2026, премия «Народный выбор»" width="520" height="520" loading="lazy">
         <img src="people/medal-2025.png" alt="Медаль Brand Award 2025, премия «Народный выбор»" width="520" height="520" loading="lazy">
       </div>
-      <div class="diploms">
-        <figure><button type="button" class="dlink" data-full="people/diplom-2026.jpg" data-alt="Диплом 2026"><img src="people/diplom-2026.jpg" alt="Диплом: победитель рейтинга Brand Award в номинации «Компания по организации визовой поддержки» 2026" width="420" height="591" loading="lazy"></button><figcaption>Диплом 2026</figcaption></figure>
-        <figure><button type="button" class="dlink" data-full="people/diplom-2025.jpg" data-alt="Диплом 2025"><img src="people/diplom-2025.jpg" alt="Диплом: победитель рейтинга Brand Award в номинации «Компания по организации визовой поддержки» 2025" width="420" height="591" loading="lazy"></button><figcaption>Диплом 2025</figcaption></figure>
-      </div>
+      
+      <button class="aw-dip dlink" type="button" data-full="people/diplom-2026.jpg" data-alt="Диплом 2026">Смотреть диплом</button>
       <a class="aw-link" href="https://narodny-vybor.by/rejtingi/belarus/sport-i-turizm/turisticheskie-kompanii/" target="_blank" rel="noopener">Рейтинг на сайте премии</a>
     </aside>
   </div>
 </section>
 
-<section class="sec" id="video" aria-labelledby="vid-h">
-  <div class="wrap">
-    <div class="sec-head row-head">
-      <h2 id="vid-h">Видео с борта</h2>
-      <p class="lead">Нажмите на ролик, чтобы включить. Снято туристами на лайнерах MSC.</p>
-    </div>
-    <div class="reels">
-      <figure><video src="people/gulls.mp4" poster="people/gulls.jpg" controls playsinline preload="none"></video><figcaption>Чайки провожают лайнер</figcaption></figure>
-      <figure><video src="people/dancers.mp4" poster="people/dancers.jpg" controls playsinline preload="none"></video><figcaption>Танцевальное шоу в театре</figcaption></figure>
-      <figure><video src="people/lobby.mp4" poster="people/lobby.jpg" controls playsinline preload="none"></video><figcaption>Холл лайнера</figcaption></figure>
-      <figure><video src="people/deck2.mp4" poster="people/deck2.jpg" controls playsinline preload="none"></video><figcaption>Палуба с логотипом MSC</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="chemodan" aria-labelledby="pack-h">
-  <div class="wrap pack2">
-    <div class="pack-intro">
-      <h2 id="pack-h">Что взять с собой</h2>
-      <p class="lead">Отмечайте, что уже собрали: список сохраняется на вашем устройстве.</p>
-      <p class="small" id="packTxt">Собрано 0 из 12</p>
-      <button class="btn btn-light-dark btn-sm" type="button" id="packReset">Начать заново</button>
-    </div>
-    <div class="notebook" role="group" aria-label="Список вещей">
-      <span class="paperclip" aria-hidden="true"></span>
-      <p class="nb-title">Чемодан в круиз</p>
-      <p class="nb-date">14–24 апреля 2027</p>
-      <ul class="packlist" id="packlist"><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Загранпаспорт — минимум 3 месяца после поездки</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Шенгенская виза Испании (многократная)</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Медицинская страховка и страховка от невыезда</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Билеты на самолёт и подтверждение отелей</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Банковская карта и немного евро наличными</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Ветровка и тёплая кофта — для севера и палубы</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Удобная обувь для прогулок по городам</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Купальник и лёгкая одежда для юга Испании</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Нарядная одежда на один-два вечера</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Таблетки от укачивания и личные лекарства</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Солнцезащитные очки и крем</span></label></li><li><label><input type="checkbox"><span class="bx" aria-hidden="true"></span><span class="tx">Зарядки и адаптер для розетки Е/F</span></label></li></ul>
-      <p class="nb-note" aria-hidden="true">не забыть паспорт!</p>
-      <div class="pack-bar" aria-hidden="true"><i id="packBar"></i></div>
-    </div>
-  </div>
-</section>
-
-
 <section class="sec" id="voprosy" aria-labelledby="faq-h">
   <div class="wrap faq-wrap">
     <h2 id="faq-h">Вопросы перед первым круизом</h2>
-    <div class="faq"><div class="faq-col"><details><summary>Почему не купить круиз напрямую у MSC?</summary><p>MSC продаёт только каюту. У нас перелёты, два отеля, трансфер и круиз уже состыкованы, а с группой едет наш менеджер, который говорит по-русски.</p></details><details><summary>Будет ли качать?</summary><p>Лайнер длиной 331 метр со стабилизаторами. В Средиземном море в апреле обычно спокойно, в Бискайском заливе бывает волна — возьмите таблетки от укачивания.</p></details><details><summary>Я не говорю по-английски</summary><p>На борту говорят по-английски, русского сервиса нет. Для этого с группой и едет наш менеджер.</p></details><details><summary>Какая погода в апреле?</summary><p>На юге Испании около 18–22 °C, на севере — в Бильбао, Ла-Рошели и Киле — около 12–16 °C и ветер. Нужна ветровка.</p></details></div><div class="faq-col"><details><summary>Как добраться из Минска до Варшавы?</summary><p>Дорога до Варшавы не входит в цену. Поможем организовать трансфер для группы за доплату.</p></details><details><summary>Нужны ли вечерние наряды?</summary><p>Днём свободная одежда. Один-два вечера праздничные: платье или рубашка с брюками. Смокинг не нужен.</p></details><details><summary>Как платить на борту?</summary><p>Всё записывается на карту гостя, её привязывают к банковской карте или к депозиту наличными.</p></details><details><summary>Можно каюту с окном или балконом?</summary><p>Да, за доплату. Менеджер посчитает по наличию кают.</p></details></div></div>
+    <div class="faq"><div class="faq-col"><details><summary>Почему не купить круиз напрямую у MSC?</summary><p>MSC продаёт только каюту. У нас перелёты, два отеля, трансфер и круиз уже состыкованы, а с группой едет наш менеджер, который говорит по-русски.</p></details><details><summary>Будет ли качать?</summary><p>Лайнер длиной 331 метр со стабилизаторами. В Средиземном море в апреле обычно спокойно, в Бискайском заливе бывает волна — возьмите таблетки от укачивания.</p></details><details><summary>Я не говорю по-английски</summary><p>На борту говорят по-английски, русского сервиса нет. Для этого с группой и едет наш менеджер.</p></details><details><summary>Какая погода в апреле?</summary><p>На юге Испании около 18–22 °C, на севере — в Бильбао, Ла-Рошели и Киле — около 12–16 °C и ветер. Нужна ветровка.</p></details><details><summary>Еду одна — так можно?</summary><p>Да. Поможем найти соседку по каюте из группы, тогда цена как при двухместном размещении. Если хотите каюту только для себя — менеджер посчитает доплату.</p></details><details><summary>Что на борту бесплатно, а что нет?</summary><p>Входят: основные рестораны и шведский стол, шоу в театре, бассейны, аквапарк, спортзал. За доплату: напитки, тематические рестораны, спа, экскурсии в портах.</p></details></div><div class="faq-col"><details><summary>Как добраться из Минска до Варшавы?</summary><p>Дорога до Варшавы не входит в цену. Поможем организовать трансфер для группы за доплату.</p></details><details><summary>Нужны ли вечерние наряды?</summary><p>Днём свободная одежда. Один-два вечера праздничные: платье или рубашка с брюками. Смокинг не нужен.</p></details><details><summary>Как платить на борту?</summary><p>Всё записывается на карту гостя, её привязывают к банковской карте или к депозиту наличными.</p></details><details><summary>Можно каюту с окном или балконом?</summary><p>Да, за доплату. Менеджер посчитает по наличию кают.</p></details><details><summary>Как оплатить?</summary><p>Цена указана в евро, оплачиваете в белорусских рублях. Сумму предоплаты и график оплаты назовёт менеджер при бронировании.</p></details><details><summary>Можно с ребёнком?</summary><p>Да, на лайнере есть детские клубы и аквапарк. Стоимость для ребёнка зависит от возраста — менеджер посчитает.</p></details></div></div>
   </div>
 </section>
 
 <section class="sec final" id="zayavka" aria-labelledby="final-h">
   <div class="wrap final-grid">
     <div>
-      <h2 id="final-h">Забронировать место в группе</h2>
+      <h2 id="final-h">Получить расчёт или забронировать</h2>
       <p class="lead">Оставьте телефон — менеджер перезвонит в рабочее время, ответит на вопросы, назовёт итоговую сумму с визой и забронирует каюту.</p>
       <p class="contact-phone"><a href="tel:+375447884422">+375 44 788-44-22</a></p>
       <p class="small">Пн–пт 10:00–19:00, сб 10:00–15:00</p>
@@ -381,7 +330,14 @@
     </div>
     <form class="form" id="leadForm" novalidate>
       <div class="field"><label for="f-name">Как к вам обращаться</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-      <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+375 (29) 123-45-67" required></div>
+      <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+375 __ ___-__-__" required></div>
+      <fieldset class="field"><legend>Что вам нужно</legend>
+        <div class="radios">
+          <label><input type="radio" name="want" value="Расчёт с визой" checked> Расчёт с визой</label>
+          <label><input type="radio" name="want" value="Забронировать каюту"> Забронировать</label>
+          <label><input type="radio" name="want" value="Есть вопрос"> Вопрос</label>
+        </div>
+      </fieldset>
       <fieldset class="field"><legend>Как удобнее связаться</legend>
         <div class="radios">
           <label><input type="radio" name="channel" value="Звонок" checked> Звонок</label>
@@ -418,7 +374,7 @@
   <a class="mbar-main" href="#zayavka">Забронировать</a>
 </nav>
 
-<script src="app.js?v=11"></script>
+<script src="app.js?v=13"></script>
 <script src="extras.js?v=1"></script>
 </body>
 </html>
