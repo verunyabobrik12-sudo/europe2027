@@ -187,3 +187,17 @@ body{background:var(--bg);color:var(--ink)}
   #o-nas .about{align-items:stretch}
   #o-nas .about-photo{height:100%;max-height:none;min-height:520px;object-fit:cover;object-position:center 60%;border-radius:22px;box-shadow:var(--shadow)}
 }
+
+/* Туристы: 6 кадров */
+.strip6{grid-auto-columns:minmax(200px,62%)}
+.strip6 figure{aspect-ratio:3/4}
+@media (min-width:760px){.strip6{grid-auto-columns:minmax(0,1fr);grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0}}
+.strip6 figure{border-radius:18px}
+/* Вечер на борту: 6 вертикалей */
+@media (min-width:900px){#kino .reels6{grid-template-columns:repeat(3,1fr)}}
+#kino .reels6 .reel{aspect-ratio:9/13}
+/* каюта открывается крупно */
+.cabin-zoom{position:relative;display:block;padding:0;border:0;background:none;cursor:zoom-in;border-radius:inherit;overflow:hidden}
+.cabin-zoom img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.cabin-zoom:hover img{transform:scale(1.03)}
+.cabin-zoom-i{position:absolute;right:12px;bottom:12px;background:rgba(10,54,60,.8);color:#fff;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px}

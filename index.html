@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="style.css?v=9">
 <link rel="stylesheet" href="rich.css?v=6">
 <link rel="stylesheet" href="brand.css?v=11">
-<link rel="stylesheet" href="sunset.css?v=5">
+<link rel="stylesheet" href="sunset.css?v=6">
 </head>
 <body>
 <a class="skip" href="#main">К содержимому</a>
@@ -231,7 +231,7 @@
     </div>
     
     <aside class="cabin-strip">
-      <img src="img/ship-cabin2.jpg" alt="Внутренняя каюта MSC Euribia" width="800" height="533" loading="lazy">
+      <button class="cabin-zoom" type="button" data-modal="image" data-src="img/ship-cabin2.jpg" data-title="Внутренняя каюта MSC Euribia" aria-label="Открыть фото каюты крупно"><img src="img/ship-cabin2.jpg" alt="Внутренняя каюта MSC Euribia" width="800" height="533" loading="lazy"><span class="cabin-zoom-i" aria-hidden="true">⤢ Открыть крупно</span></button>
       <div>
         <h3>Каюта: внутренняя, без окна</h3>
         <p>В цене 1 590 € — внутренняя каюта: кровать, душ, кондиционер, сейф, телевизор. Днём вы в городах и на палубах, в каюте спите. Окно или балкон — за доплату.</p>
@@ -262,7 +262,7 @@
       <h2 id="cine-h">Вечер на борту</h2>
       <p class="lead">Шоу, ужин, бокал вина и закат с палубы. После дня в порту это лучшая часть круиза.</p>
     </div>
-    <div class="reels4"><figure class="reel"><img src="people/dancers.jpg" alt="" loading="lazy"><video data-src="people/dancers.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Вечернее шоу</figcaption></figure><figure class="reel"><img src="promo/v-dance.jpg" alt="" loading="lazy"><video data-src="promo/v-dance.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Закат вдоль борта</figcaption></figure><figure class="reel"><img src="promo/v-jacuzzi.jpg" alt="" loading="lazy"><video data-src="promo/v-jacuzzi.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Джакузи на закате</figcaption></figure><figure class="reel"><img src="promo/v-chef.jpg" alt="" loading="lazy"><video data-src="promo/v-chef.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Ужин у стойки</figcaption></figure></div>
+    <div class="reels4 reels6"><figure class="reel"><img src="people/dancers.jpg" alt="" loading="lazy"><video data-src="people/dancers.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Вечернее шоу</figcaption></figure><figure class="reel"><img src="promo/v-dance.jpg" alt="" loading="lazy"><video data-src="promo/v-dance.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Закат вдоль борта</figcaption></figure><figure class="reel"><img src="promo/v-jacuzzi.jpg" alt="" loading="lazy"><video data-src="promo/v-jacuzzi.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Джакузи на закате</figcaption></figure><figure class="reel"><img src="promo/v-chef.jpg" alt="" loading="lazy"><video data-src="promo/v-chef.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Ужин у стойки</figcaption></figure><figure class="reel"><img src="people/sunset.jpg" alt="" loading="lazy"><video data-src="people/sunset.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Закат — видео нашей туристки</figcaption></figure><figure class="reel"><img src="people/club.jpg" alt="" loading="lazy"><video data-src="people/club.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><figcaption>Танцы в клубе</figcaption></figure></div>
     <p class="credit">Видео: MSC Cruises и наши туристы.</p>
   </div>
 </section>
@@ -273,9 +273,12 @@
       <h2 id="ppl-h">Круиз глазами наших туристов</h2>
       <p class="lead">Без фильтров: так это выглядит на телефоне у наших туристок.</p>
     </div>
-    <div class="strip strip3">
+    <div class="strip strip6">
       <figure><img src="people/friends.jpg" alt="Туристки в холле лайнера" loading="lazy" width="619" height="1100"><figcaption>Подруги в атриуме лайнера</figcaption></figure>
+      <figure><video src="people/deck2.mp4" poster="people/deck2.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video><figcaption>Утро на палубе</figcaption></figure>
       <figure><img src="people/crew.jpg" alt="Туристы с экипажем лайнера" loading="lazy" width="619" height="1100"><figcaption>Вечер с экипажем</figcaption></figure>
+      <figure><video src="people/gulls.mp4" poster="people/gulls.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video><figcaption>Чайки у борта</figcaption></figure>
+      <figure><img src="people/dinner.jpg" alt="Ужин в ресторане лайнера" loading="lazy" width="619" height="1100"><figcaption>Ужин в ресторане</figcaption></figure>
       <figure><video src="people/dessert.mp4" poster="people/dessert.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video><figcaption>Десерты на шведском столе</figcaption></figure>
     </div>
   </div>
@@ -408,7 +411,7 @@
 </nav>
 
 <script src="app.js?v=13"></script>
-<script src="extras.js?v=1"></script>
+<script src="extras.js?v=2"></script>
 <script>
 (function () {
   var f = document.getElementById('gidForm'), m = document.getElementById('gidMsg');

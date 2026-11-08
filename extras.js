@@ -12,7 +12,7 @@
         cap.innerHTML = '<a href="https://www.youtube.com/watch?v=' + t.dataset.id + '" target="_blank" rel="noopener">Не воспроизводится? Открыть на YouTube</a>';
       } else {
         body.innerHTML = '<img src="' + t.dataset.src + '" alt="' + t.dataset.title + '">';
-        cap.textContent = 'Схема: cruisedeckplans.com. Нажмите на схему, чтобы увеличить.';
+        cap.textContent = t.dataset.cap || (t.dataset.src.indexOf('palubi') >= 0 ? 'Нажмите на схему, чтобы увеличить.' : t.dataset.title || '');
       }
       dlg.showModal(); return;
     }
