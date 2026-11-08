@@ -181,3 +181,9 @@ body{background:var(--bg);color:var(--ink)}
 .gid{grid-template-areas:"copy" "pages" "form"}
 .gid-copy{grid-area:copy}.gid-pages{grid-area:pages}.gid-form{grid-area:form}
 @media (min-width:900px){.gid{grid-template-areas:"copy pages" "form pages";row-gap:6px}}
+
+/* «Кто мы»: фото тянется на всю высоту текста, без пустоты сверху */
+@media (min-width:900px){
+  #o-nas .about{align-items:stretch}
+  #o-nas .about-photo{height:100%;max-height:none;min-height:520px;object-fit:cover;object-position:center 60%;border-radius:22px;box-shadow:var(--shadow)}
+}
